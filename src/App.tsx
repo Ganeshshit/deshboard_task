@@ -1,35 +1,37 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+
+import "./App.css";
+
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import Navbar from "./components/Navbar";
+import Sidebar from "./components/Sidebar";
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  // const [count, setCount] = useState(0)
+  const [darkMode, setDarkMode] = useState(true);
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+  };
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div
+      className={darkMode ? "bg-gray-800 text-white" : "bg-white text-gray-800"}
+    >
+      <Router>
+        <div className="flex">
+          <Sidebar darkMode={darkMode} />
+          <div className="flex-1">
+            <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+            <div className="p-6">
+              <Routes>
+                <Route path="/" element={<HomePage />} />
+              </Routes>
+            </div>
+          </div>
+        </div>
+      </Router>
+    </div>
+  );
 }
 
-export default App
+export default App;
