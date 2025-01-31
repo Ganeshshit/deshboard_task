@@ -6,7 +6,7 @@ import HomePage from "./pages/HomePage.js";
 function App() {
   const [darkMode, setDarkMode] = useState(true);
 
-  const toggleDarkMode = () => {
+  const toggleDarkMode = () => { 
     setDarkMode(!darkMode);
   };
 
