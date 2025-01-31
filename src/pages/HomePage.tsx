@@ -23,7 +23,21 @@ const cardData = [
   },
   // Add more cards here
 ];
-const Card = ({ data }) => {
+interface CardProps {
+  key: number;
+  data: {
+    id: number;
+    image: string;
+    price: number;
+    title: string;
+    location: string;
+    beds: number;
+    baths: number;
+    area: string;
+  };
+}
+
+const Card: React.FC<CardProps> = ({ data }) => {
   return (
     <motion.div
       whileHover={{ scale: 1.05, rotate: 1 }}
