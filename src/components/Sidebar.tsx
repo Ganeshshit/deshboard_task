@@ -10,7 +10,11 @@ import {
   FaPowerOff,
 } from "react-icons/fa";
 
-const Sidebar = ({ darkMode }) => {
+interface SidebarProps {
+  darkMode: boolean;
+}
+
+const Sidebar: React.FC<SidebarProps> = ({ darkMode }) => {
   return (
     <div
       className={`fixed top-0 left-0 w-[100px] h-full ${
