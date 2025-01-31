@@ -17,7 +17,7 @@ const Sidebar = ({ darkMode }) => {
         darkMode ? "bg-gray-800 text-white" : "bg-white text-gray-800"
       } shadow-lg`}
     >
-      <div className="flex flex-col p-4 space-y-4">
+      <div className="flex flex-col p-4 space-y-4 mt-20 justify-center items-center">
         <Link to="/" className="text-xl flex items-center space-x-2">
           <FaEthereum />
         </Link>

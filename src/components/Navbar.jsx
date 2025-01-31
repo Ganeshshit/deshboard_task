@@ -30,11 +30,6 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
             )}
           </button>
           <div className="flex items-center space-x-2 cursor-pointer">
-            <img
-              src="https://via.placeholder.com/32"
-              alt="Profile"
-              className="w-8 h-8 rounded-full"
-            />
             <User className="w-6 h-6" />
           </div>
         </div>
