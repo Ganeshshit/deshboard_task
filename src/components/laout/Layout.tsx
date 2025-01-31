@@ -1,8 +1,19 @@
-import React from "react";
-import Navbar from "../../components/Navbar";
-import Sidebar from "../../components/Sidebar";
+import React, { ReactNode } from "react";
+import Navbar from "../Navbar";
+import Sidebar from "../Sidebar";
 
-const Layout = ({ children, darkMode, toggleDarkMode }) => {
+// Define types for the props
+interface LayoutProps {
+  children: ReactNode; // The children prop can be any valid React node
+  darkMode: boolean; // darkMode is a boolean
+  toggleDarkMode: () => void; // toggleDarkMode is a function that takes no arguments and returns void
+}
+
+const Layout: React.FC<LayoutProps> = ({
+  children,
+  darkMode,
+  toggleDarkMode,
+}) => {
   return (
     <div
       className={
